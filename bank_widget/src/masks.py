@@ -5,7 +5,7 @@ def get_mask_card_number(card_number: str) -> str:
     masked_middle = "*" * (len(card_number) - 10)
 
     masked_number = start + masked_middle + end
-    result_mask = " ".join([masked_number[i: i + 4] for i in range(0, len(masked_number), 4)])
+    result_mask = " ".join([masked_number[i : i + 4] for i in range(0, len(masked_number), 4)])
 
     return result_mask
 
