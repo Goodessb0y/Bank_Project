@@ -17,7 +17,7 @@ def mask_account_card(card_or_bill: str) -> str:
         return f'Счет {mask_data}'
     else:
         mask_data = get_mask_card_number(card_or_bill[-16:])
-        return f'{card_or_bill[:-16]} {mask_data}'
+        return f'{card_or_bill[:-16]}{mask_data}'
 
 
 def get_date(data_time: str) -> str:
