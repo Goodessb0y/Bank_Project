@@ -1,4 +1,4 @@
-from masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card_or_bill: str) -> str:
@@ -15,5 +15,5 @@ def mask_account_card(card_or_bill: str) -> str:
 
 def get_date(data_time: str) -> str:
     """Смена формата даты"""
-    dt = datetime.fromisoformat(data_time)
+    dt = data_time.fromisoformat(data_time)
     return dt.strftime("%d.%m.%Y")
