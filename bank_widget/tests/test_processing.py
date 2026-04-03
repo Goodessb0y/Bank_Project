@@ -1,5 +1,6 @@
 import pytest
-from bank_widget.src.processing import *
+
+from bank_widget.src.processing import filter_by_state, sort_by_date
 
 
 @pytest.fixture
