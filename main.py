@@ -1,6 +1,6 @@
-# from bank_widget.src.masks import get_mask_account, get_mask_card_number
-# from bank_widget.src.processing import filter_by_state, sort_by_date
-# from bank_widget.src.widget import get_date, mask_account_card
+# from src.masks import get_mask_account, get_mask_card_number
+# from src.processing import filter_by_state, sort_by_date
+# from src.widget import get_date, mask_account_card
 #
 # data_time = input()
 # card_or_bill = input()
