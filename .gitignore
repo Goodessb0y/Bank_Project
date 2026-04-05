@@ -33,7 +33,7 @@ env/
 .tox/
 nosetests.xml
 coverage.xml
-htmlcov/
+# htmlcov/
 
 # Installer logs
 pip-log.txt

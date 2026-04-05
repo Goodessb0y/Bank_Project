@@ -13,9 +13,8 @@
 
 git clone https://github.com/Goodessb0y/Bank_Project.git
 
-Перейти в папку проекта:
+Перейти в папку проекта
 
-cd bank_widget
 
 ## Пример использования функций фильтрации и сортировки
 
@@ -25,3 +24,21 @@ from src.processing import filter_by_state, sort_by_date
 data = [...]
 filtered = filter_by_state(data)
 sorted_data = sort_by_date(filtered)
+```
+
+## Тестирование
+Для проекта используются:
+
+- pytest - запуск тестов
+- pytest-cov - измерение покрытия кода тестами
+
+### Генерация HTML-отчета покрытия 
+
+pytest --cov=src --cov-report=html
+
+После выполнения команды будет создана папка htmlcov/.
+Откройте файл htmlcov/index.html в браузере, чтобы посмотреть подробный отчёт покрытия.
+
+### Покрытие тестами
+
+Общее покрытие проекта: 100%
