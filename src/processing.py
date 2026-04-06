@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Any
 
+
 def filter_by_state(data: list[dict[str, Any]], state: str = "EXECUTED") -> list[dict[str, Any]]:
     """
     args:
@@ -16,6 +17,7 @@ def filter_by_state(data: list[dict[str, Any]], state: str = "EXECUTED") -> list
             filtered.append(dicts)
 
     return filtered
+
 
 def sort_by_date(data: list[dict[str, Any]], sort: bool = True) -> list[dict[str, Any]]:
     """
