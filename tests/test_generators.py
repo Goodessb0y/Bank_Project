@@ -53,6 +53,7 @@ def transactions():
         },
     ]
 
+
 @pytest.mark.parametrize("code, expected_len", [("RUB", 2), ("USD", 3), ("", 0)])
 def test_filter_by_currency(transactions, code, expected_len):
     result = list(filter_by_currency(transactions, code))

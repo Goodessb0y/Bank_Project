@@ -25,6 +25,7 @@ def log(filename: Optional[str] = None) -> Callable[[F], F]:
     - Ошибка:
         <function_name> error: <ExceptionType>. Inputs: (<args>), {<kwargs>}
     """
+
     def decorator(func: F) -> F:
         @functools.wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
@@ -40,10 +41,7 @@ def log(filename: Optional[str] = None) -> Callable[[F], F]:
                 write(f"{func.__name__} ok")
                 return result
             except Exception as e:
-                write(
-                    f"{func.__name__} error: {type(e).__name__}. "
-                    f"Inputs: {args}, {kwargs}"
-                )
+                write(f"{func.__name__} error: {type(e).__name__}. " f"Inputs: {args}, {kwargs}")
                 raise
 
         return cast(F, wrapper)

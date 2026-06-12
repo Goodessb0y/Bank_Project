@@ -4,7 +4,7 @@ from src.widget import get_date, mask_account_card
 
 
 @pytest.fixture
-def test_cases():
+def test_cases() -> list:
     return [
         ("Счет 1212343456567878", "Счет **7878"),
         ("Visa 1212343456567878", "Visa 1212 34** **** 7878"),

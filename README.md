@@ -56,6 +56,47 @@ end = 10000
 card_number_generator(start, end)
 ```
 
+## Log decorator
+
+Декоратор `log` используется для логирования выполнения функций:
+- успешное завершение
+- ошибки с типом исключения и входными параметрами
+
+
+- При успешном выполнении функции записывает:
+  `имя_функции ok`
+
+- При ошибке записывает:
+  `имя_функции error: <тип ошибки>. Inputs: (<args>, <kwargs>)`
+
+- Логи могут писаться:
+  - в файл, если указан `filename`
+  - в консоль, если `filename` не задан
+
+### Пример:
+
+```python
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
+```
+
+---
+
+### Логи:
+
+```md
+## Examples
+
+Success:
+    my_function ok
+
+Error:
+    my_function error: ZeroDivisionError. Inputs: (1, 0), {}
+```
+
 ## Тестирование
 Для проекта используются:
 
