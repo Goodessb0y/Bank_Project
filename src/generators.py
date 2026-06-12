@@ -1,4 +1,4 @@
-from typing import Any, Iterator
+from typing import Any, Generator, Iterator
 
 
 def filter_by_currency(transactions: list[dict[str, Any]], code: str) -> Iterator[dict]:
@@ -27,7 +27,7 @@ def transaction_descriptions(transaction_data: list[dict[str, Any]]) -> Iterator
         yield transaction["description"]
 
 
-def card_number_generator(start: int, end: int):
+def card_number_generator(start: int, end: int) -> Generator:
     """Генератор yielding отформатированный номер карты в заданном диапазоне.
 
     Args:
