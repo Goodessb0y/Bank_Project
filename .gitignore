@@ -27,6 +27,7 @@ env/
 /include/
 /lib/
 /lib64/
+.env
 
 # Test and coverage
 .coverage
