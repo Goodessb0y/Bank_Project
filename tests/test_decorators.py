@@ -58,3 +58,4 @@ def test_log_error_to_file(tmp_path):
 
     assert "fail error: RuntimeError" in content
     assert "Inputs: (1,)" in content
+
