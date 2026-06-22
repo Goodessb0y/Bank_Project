@@ -6,10 +6,7 @@ from src.utils import transactions_data
 def test_valid_list(tmp_path):
     test_file = tmp_path / "test.json"
 
-    data = [
-        {"id": 1},
-        {"id": 2}
-    ]
+    data = [{"id": 1}, {"id": 2}]
 
     with open(test_file, "w", encoding="utf-8") as f:
         json.dump(data, f)
@@ -41,9 +38,7 @@ def test_invalid_json(tmp_path):
 def test_json_not_list(tmp_path):
     test_file = tmp_path / "dict.json"
 
-    data = {
-        "id": 1
-    }
+    data = {"id": 1}
 
     with open(test_file, "w", encoding="utf-8") as f:
         json.dump(data, f)

@@ -1,18 +1,12 @@
+from unittest.mock import patch
+
 import pytest
 
-from unittest.mock import patch
 from src.external_api import currency_amount
 
 
 def test_rub():
-    tx = {
-        "operationAmount": {
-            "amount": "100",
-            "currency": {
-                "code": "RUB"
-            }
-        }
-    }
+    tx = {"operationAmount": {"amount": "100", "currency": {"code": "RUB"}}}
 
     assert currency_amount(tx) == 100.0
 
@@ -21,14 +15,7 @@ def test_rub():
 def test_usd(mock_convert):
     mock_convert.return_value = 87.5
 
-    tx = {
-        "operationAmount": {
-            "amount": "100",
-            "currency": {
-                "code": "USD"
-            }
-        }
-    }
+    tx = {"operationAmount": {"amount": "100", "currency": {"code": "USD"}}}
 
     result = currency_amount(tx)
 
@@ -40,14 +27,7 @@ def test_usd(mock_convert):
 def test_eur(mock_convert):
     mock_convert.return_value = 90.0
 
-    tx = {
-        "operationAmount": {
-            "amount": "100",
-            "currency": {
-                "code": "EUR"
-            }
-        }
-    }
+    tx = {"operationAmount": {"amount": "100", "currency": {"code": "EUR"}}}
 
     result = currency_amount(tx)
 
@@ -56,14 +36,7 @@ def test_eur(mock_convert):
 
 
 def test_invalid_currency():
-    tx = {
-        "operationAmount": {
-            "amount": "100",
-            "currency": {
-                "code": "GBP"
-            }
-        }
-    }
+    tx = {"operationAmount": {"amount": "100", "currency": {"code": "GBP"}}}
 
     with pytest.raises(ValueError):
         currency_amount(tx)
@@ -71,14 +44,7 @@ def test_invalid_currency():
 
 @patch("src.external_api.convert_currency")
 def test_rub_without_conversion(mock_convert):
-    tx = {
-        "operationAmount": {
-            "amount": "100",
-            "currency": {
-                "code": "RUB"
-            }
-        }
-    }
+    tx = {"operationAmount": {"amount": "100", "currency": {"code": "RUB"}}}
 
     result = currency_amount(tx)
 
