@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bank_widget"
+name = "pythonproject"
 version = "0.1.0"
 description = ""
 authors = ["Sukharev Alexandr <suxarev.a86@gmail.com>"]
@@ -7,6 +7,8 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.13"
+python-dotenv = "^1.2.2"
+requests = "^2.34.2"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^6.1.0"
