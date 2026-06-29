@@ -27,13 +27,14 @@ env/
 /include/
 /lib/
 /lib64/
+.env
 
 # Test and coverage
 .coverage
 .tox/
 nosetests.xml
 coverage.xml
-htmlcov/
+# htmlcov/
 
 # Installer logs
 pip-log.txt
