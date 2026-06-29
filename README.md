@@ -1,3 +1,5 @@
+from src.pd_operations import get_transactions_csv
+
 # Bank Widget
 
 ## Описание
@@ -96,6 +98,9 @@ Success:
 Error:
     my_function error: ZeroDivisionError. Inputs: (1, 0), {}
 ```
+## Работа с  CVS/EXCEL
+Функции get_transactions_csv, get_transactions_excel
+- Получение данных о транзакциях по пути файла в формате список словарей
 
 ## Тестирование
 Для проекта используются:
