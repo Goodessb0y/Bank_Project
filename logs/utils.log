@@ -1,0 +1,5 @@
+2026-06-26 14:15:15,008 - utils - INFO - list data loaded from C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-24\test_valid_list0\test.json
+2026-06-26 14:15:15,009 - utils - ERROR - File not found
+2026-06-26 14:15:15,012 - utils - ERROR - File not found
+2026-06-26 14:15:15,014 - utils - ERROR - json data decode error
+2026-06-26 14:15:15,017 - utils - ERROR - json data not list type

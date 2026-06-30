@@ -2,9 +2,14 @@ import os
 
 import requests
 from dotenv import load_dotenv
+from typing_extensions import reveal_type
 
 load_dotenv()
-api_key = os.getenv("API_KEY")
+api_key_env = os.getenv("API_KEY")
+
+if api_key_env is None:
+    raise RuntimeError("API_KEY not found")
+api_key: str = api_key_env
 
 url = "https://api.apilayer.com/exchangerates_data/convert"
 
@@ -20,7 +25,7 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> flo
     """
     headers = {"apikey": api_key}
 
-    params = {"from": from_currency, "to": to_currency, "amount": amount}
+    params: dict[str, str|float] = {"from": from_currency, "to": to_currency, "amount": amount}
 
     response = requests.get(url, headers=headers, params=params)
     result = response.json()
